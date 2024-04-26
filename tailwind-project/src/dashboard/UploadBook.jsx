@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Checkbox, Label, TextInput } from "flowbite-react";
+import { Button, Checkbox, Label, Select, TextInput, Textarea } from "flowbite-react";
 import { clearConfigCache } from 'prettier';
 
 const UploadBook = () => {
@@ -155,7 +155,7 @@ const UploadBook = () => {
                         placeholder="Write your book description..."
                         required
                         className='w-full'
-                        rows={4}
+                        rows={6}
                     />   
                 </div>
 
