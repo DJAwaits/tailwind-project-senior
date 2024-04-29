@@ -46,11 +46,22 @@ const EditBooks = () => {
         const bookDescription = form.bookDescription.value;
         const bookPDFURL = form.bookPDFURL.value;
 
-        const bookObj = {
+        const updateBookObj = {
             bookTitle, authorName, imageURL, category, bookDescription, bookPDFURL
         }
 
-        console.log(bookObj)
+        // console.log(bookObj)
+        // update book data
+        fetch(`http://localhost:5000/book/${}`, {
+            method:"PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updateBookObj)
+        }).then(res => res.json()).then(data => {
+            // console.log(data)
+            alert("Book updated successfully!!!")
+        })
 
     };
     return (
